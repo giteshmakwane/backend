@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
 
     } catch (err) {
         console.log(err);
-        res.status(500).json({error: "internal server error"});
+        res.status(500).json({ error: "internal server error" });
     }
 })
 
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
         res.status(200).json(data);
     } catch (err) {
         console.log(err);
-        res.status(500).json({error: "internal server error"});
+        res.status(500).json({ error: "internal server error" });
     }
 })
 
@@ -36,16 +36,16 @@ router.get('/', async (req, res) => {
 router.get('/:taste', async (req, res) => {
     try {
         const taste = req.params.taste;
-        if(taste == 'sweet' || taste == 'spicy' || taste == 'soar'){
-            const response = await MenuItem.find({taste : taste});
+        if (taste == 'sweet' || taste == 'spicy' || taste == 'soar') {
+            const response = await MenuItem.find({ taste: taste });
             res.status(200).json(response);
-        }else{
-            res.status(404).json({errpr : "Invalid taste type"})
+        } else {
+            res.status(404).json({ errpr: "Invalid taste type" })
         }
 
     } catch (err) {
         console.log(err);
-        res.status(500).json({error: "internal server error"});
+        res.status(500).json({ error: "internal server error" });
     }
 })
 // comment added for testing purpose

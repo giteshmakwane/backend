@@ -5,11 +5,11 @@ require('dotenv').config();
 
 //  const mongoURL = "mongodb+srv://helloworld:gitesh123@cluster0.qawympj.mongodb.net/"
 
-// const mongoURL = process.env.MONGODB_URL_LOCAL;
+const mongoURL = process.env.MONGODB_URL_LOCAL;
 
-const mongoURL = process.env.MONGODB_URL;
+// const mongoURL = process.env.MONGODB_URL;
 
-mongoose.connect( mongoURL, {
+mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
